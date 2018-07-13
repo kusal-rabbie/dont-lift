@@ -1,3 +1,7 @@
 #!/bin/bash
 
-xrandr --output eDP-1 --brightness "$1"
+# selcet the primary display
+DEV=$(xrandr -q | grep connected | grep primary | cut -d' ' -f1)
+
+# adjust the brightness
+xrandr --output "$DEV" --brightness "$1"
