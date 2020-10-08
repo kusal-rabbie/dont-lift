@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# stop and restart the usb kernel modules
+sudo modprobe -r usbhid && sudo modprobe -r psmouse
+echo kernel modules stopped
+
+sudo modprobe usbhid && sudo modprobe psmouse  
+echo kernel modules restarted
